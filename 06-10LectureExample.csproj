@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>_06_10LectureExample</RootNamespace>
+    <RootNamespace>Restaurant of Restaurants</RootNamespace>
   </PropertyGroup>
 
 </Project>
