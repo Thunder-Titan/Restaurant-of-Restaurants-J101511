@@ -1,14 +1,14 @@
 ﻿@page
-@model RestaurantofRestaurants.Pages.Menu.IndexModel
+@model RestaurantofRestaurants.Pages.Menu.AdminModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Admin";
 }
 
-<h1>Menu</h1>
+<h1>Admin</h1>
 
 <p>
-    @*<a asp-page="Create">Create New</a>*@
+    <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -49,11 +49,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            @*<td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>*@
+            </td>
         </tr>
 }
     </tbody>
