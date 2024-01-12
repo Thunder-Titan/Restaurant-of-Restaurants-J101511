@@ -16,5 +16,7 @@ namespace RestaurantofRestaurants.Models
         [DataType(DataType.Currency)]
         [Column(TypeName = "Money")]
         public Nullable<decimal> Price { get; set; }
+        public string ImageDescription { get; set; }
+        public byte[] ImageData { get; set; }
     }
 }
