@@ -28,7 +28,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.FoodItem[0].Price)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model =>model.FoodItem[0].ImageData)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -49,6 +51,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
+            @{
+                try
+                {
+                    <td>
+                        <img src="@string.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImageData))" alt="@item.ImageDescription" />
+                    </td>
+                }
+                catch
+                {
+                    <td>
+                         <img class="img=thumb" src="/Images/IMG_2302.jpg" alt="No Image provided" />   
+                    </td>
+                }
+            }
             @*<td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |

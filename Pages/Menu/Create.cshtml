@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FoodItem.Item_name" class="control-label"></label>
@@ -39,6 +39,18 @@
                 <span asp-validation-for="FoodItem.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="FoodItem.ImageDescription" class="control-label"></label>
+                <label asp-for="FoodItem.ImageDescription" class="form-control" />
+                <span asp-validation-for="FoodItem.ImageDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodItem.ImageData" class="control-label">Image Upload</label>
+
+                <input type="file" id="file1"
+                       name="file1"
+                       multiple="multiple" />
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -46,7 +58,7 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Admin">Back to List</a>
 </div>
 
 @section Scripts {
