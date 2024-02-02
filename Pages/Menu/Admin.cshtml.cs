@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RestaurantofRestaurants.Data;
 using RestaurantofRestaurants.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestaurantofRestaurants.Pages.Menu
 {
+    [Authorize(Roles = "Admin")]
     public class AdminModel : PageModel
     {
         private readonly RestaurantofRestaurants.Data.RestaurantofRestaurantsContext _context;

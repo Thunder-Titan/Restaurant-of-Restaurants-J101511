@@ -17,10 +17,16 @@ namespace RestaurantofRestaurants.Data
 
         public DbSet<FoodItem> FoodItems { get; set; }
 
+        public DbSet<CheckoutCustomer> CheckoutCustomers { get; set; } = default!;
+        public DbSet<Basket> Baskets { get; set; } = default!;
+        public DbSet<BasketItem> BasketItem { get; set; } = default!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<FoodItem>().ToTable("FoodItem");
+
+            modelBuilder.Entity<BasketItem>().HasKey(t => new { t.StockID, t.BasketID });
         }
     }
 }
