@@ -1,0 +1,46 @@
+﻿@page
+@model RestaurantofRestaurants.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "RoR Checkout";
+}
+@using RestaurantofRestaurants.Data
+@using Microsoft.Extensions.Options
+
+<h1>Restaurant of Restaurants Checkout</h1>
+
+@if (Model.Items.Count == 0)
+{
+    <p>There aren't any items in your basket, dumbass. Go get some from the menu and come back here later.</p>
+}
+else
+{
+    <form method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    var subtotal = item.Price * item.Quantity;
+
+                    <tr>
+                        <td>@item.Item_Name</td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>@item.Quantity</td>
+                        <td>@subtotal.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>Order Total: @Model.Total.ToString("C")</h2>
+
+        <button type="submit" asp-asp-page-handler="Buy">Buy</button>
+    </form>
+}
