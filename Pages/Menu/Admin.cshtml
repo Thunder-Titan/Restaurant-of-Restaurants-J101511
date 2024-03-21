@@ -8,9 +8,9 @@
 <h1>Admin</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New</a> @* Same menu as availaible to all, but only accessible to admins with available editing options *@
 </p>
-<table class="table">
+<table class="table"> @* Displays the menu as a table *@
     <thead>
         <tr>
             <th>
@@ -49,7 +49,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
+            <td> @* Gives admins the option to edit the information of or delete items *@
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>

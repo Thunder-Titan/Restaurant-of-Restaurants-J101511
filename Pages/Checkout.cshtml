@@ -8,11 +8,11 @@
 
 <h1>Restaurant of Restaurants Checkout</h1>
 
-@if (Model.Items.Count == 0)
+@if (Model.Items.Count == 0) @* If the user's basket is empty, they get this message *@
 {
     <p>There aren't any items in your basket. Go get some from the menu and come back here later.</p>
 }
-else
+else @* If they do have items, this should display instead *@
 {
     <form method="post">
         <table class="table">

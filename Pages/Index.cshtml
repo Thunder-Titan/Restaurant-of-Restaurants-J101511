@@ -2,16 +2,18 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    @* Allows user roles to be displayed *@
     var inMemberRole = User.IsInRole("Member");
     var inAdminRole = User.IsInRole("Admin");
 }
 
-<div class="text-center">
+<div class="text-center"> @* Displays welcome message on home page *@
     <h1 class="display-4">Welcome to the Restaurant of Restaurants</h1>
     <p>Here we sell food. Thats it. No more, no less.</p>
     <p>"What kind of food?" I hear you ask?</p>
     <p>That information is disclosed on the menu page.</p>
     <p>ENJOY. OR ELSE.</p>
+    @* Displays which roles the user is in *@
     <p>Is Admin: @inAdminRole</p>
     <p>Is Member: @inMemberRole</p>
 </div>

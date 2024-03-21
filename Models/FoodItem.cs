@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestaurantofRestaurants.Models
 {
-    public class FoodItem
+    public class FoodItem //FoodItem class, used for storing menu item info
     {
         [Key]
         public int ID { get; set; }
